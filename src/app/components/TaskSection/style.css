@@ -1,0 +1,27 @@
+.TaskSection-container {
+  width: 449px;
+  height: 808px;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.TaskSection-header {
+  width: 449px;
+  height: 24px;
+  gap: 12px;
+}
+.TaskSection-main {
+  height: 764px;
+  padding: 12px;
+  gap: 4px;
+  border-radius: 20px;
+  background: #fafaf5;
+}
+.TaskSection-main-container {
+  display: flex;
+  flex-direction: column;
+  width: 425px;
+  height: 676px;
+  gap: 12px;
+  overflow-y:scroll;
+}

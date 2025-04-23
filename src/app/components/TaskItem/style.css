@@ -1,0 +1,41 @@
+.TaskItem {
+    display: flex;
+    flex-direction: column;
+  height: 124px;
+  padding: 16px;
+  gap: 16px;
+  border-radius: 16px;
+  border-width: 1px;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid #bbddd6;
+
+  font-family: 'Inter';
+
+
+}
+.TaskItem-header {
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+}
+.TaskItem-header-info {
+  display: flex;
+  gap: 8px;
+}
+.TaskItem-title {
+  font-family: 'Inter';
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0%;
+
+  color: var(--text-primary, #212121);
+
+}
+.TaskItem-main {
+    display: flex;
+    gap: 8px;
+}
+.TaskItem-status {
+    
+}
