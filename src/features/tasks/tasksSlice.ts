@@ -44,6 +44,7 @@ export const tasksSlice = createAppSlice({
       }>
     ) => {
       const { taskId, targetStatusId } = action.payload;
+      console.log(taskId, targetStatusId)
       const taskIndex = state.tasks.findIndex(t => t.id === taskId);
       
       if (taskIndex >= 0) {
@@ -52,14 +53,19 @@ export const tasksSlice = createAppSlice({
     }),
   },
   selectors: {
-    selectTasksByStatus: (state, statusId: number) => {
-      return state.tasks.filter(task => task.statusId === statusId);
+    
+    selectAssignees: (state) => {
+      return state.dictionary.assignees;
+    }
+    ,
+    selectStatuses: (state) => {
+      return state.dictionary.statuses;
     }
   }
 });
 
 export const { addTask, deleteTask , moveTask} = tasksSlice.actions;
 
-export const { selectTasksByStatus } = tasksSlice.selectors;
+export const {  selectAssignees, selectStatuses } = tasksSlice.selectors;
 
 export default tasksSlice.reducer;

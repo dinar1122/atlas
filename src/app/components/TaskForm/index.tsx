@@ -1,43 +1,50 @@
-import { useForm } from "react-hook-form"
-import { addTask } from "../../../features/tasks/tasksSlice"
-import { useDispatch } from "react-redux"
-import { Task } from "../../assets/types"
+import { useForm } from "react-hook-form";
+import { addTask } from "../../../features/tasks/tasksSlice";
+import { useDispatch } from "react-redux";
+import { Task } from "../../assets/types";
+import './style.css';
 
-type TaskFormData = Omit<Task, "id">
+type TaskFormData = Omit<Task, "id">;
 
-export const TaskForm = ({ statusId = 0 }) => {
-  const dispatch = useDispatch()
+export const TaskForm = ({setForm = () => {}, statusId = 0 }) => {
+  const dispatch = useDispatch();
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm<TaskFormData>()
+  } = useForm<TaskFormData>();
 
   const onSubmit = (data: TaskFormData) => {
-    dispatch(addTask({ ...data, statusId }))
-    reset()
-  }
+    dispatch(addTask({ ...data, statusId }));
+    reset();
+    setForm()
+  };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <div>
-        <label>Название задачи</label>
+    <form className="task-form" onSubmit={handleSubmit(onSubmit)}>
+      <div className="task-form__group">
         <input
+          className="task-form__input"
+          placeholder="Название задачи"
           {...register("taskName", {
-            required: "Название обязательно",
+            required: "Обязательно",
             minLength: { value: 3, message: "Минимум 3 символа" },
           })}
         />
-        {errors.taskName && <span>{errors.taskName.message}</span>}
+        {errors.taskName && <span className="task-form__error">{errors.taskName.message}</span>}
       </div>
 
-      <div>
-        <label>Автор</label>
-        <input {...register("assignee", { required: "Укажите автора" })} />
+      <div className="task-form__group">
+        <input
+          className="task-form__input"
+          placeholder="Автор"
+          {...register("assignee", { required: "Обязательно" })}
+        />
+        
       </div>
 
-      <button type="submit">Добавить задачу</button>
+      <button type="submit" className="task-form__submit">Добавить</button>
     </form>
-  )
-}
+  );
+};

@@ -1,6 +1,12 @@
+.task-item-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
 .TaskItem {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
   height: 124px;
   padding: 16px;
   gap: 16px;
@@ -8,34 +14,71 @@
   border-width: 1px;
   background-color: rgb(255, 255, 255);
   border: 1px solid #bbddd6;
-
   font-family: 'Inter';
-
-
 }
+
+.delete-button-wrapper {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 10;
+  pointer-events: auto;
+}
+
 .TaskItem-header {
   display: flex;
   gap: 8px;
   justify-content: space-between;
 }
+
 .TaskItem-header-info {
   display: flex;
   gap: 8px;
 }
+
 .TaskItem-title {
-  font-family: 'Inter';
+  font-family: "Inter";
   font-weight: 600;
   font-size: 16px;
   line-height: 20px;
   letter-spacing: 0%;
-
+  align-items: center;
+  display: flex;
   color: var(--text-primary, #212121);
+}
 
-}
 .TaskItem-main {
-    display: flex;
-    gap: 8px;
+  display: flex;
+  gap: 8px;
 }
-.TaskItem-status {
-    
+
+.task-icon {
+  align-items: center;
+  display: flex;
+}
+
+.avatar-text {
+  font-family: "Inter";
+  font-weight: 510;
+  font-size: 10px;
+  line-height: 10px;
+  letter-spacing: 0%;
+  color: #0a9e8e;
+}
+
+.avatar {
+  width: 16px;
+  height: 16px;
+  gap: 10px;
+  border-radius: 100%;
+  border-width: 0.5px;
+  padding-top: 2px;
+  padding-right: 4px;
+  padding-bottom: 4px;
+  padding-left: 4px;
+  background: #e9fbf9;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  border: 0.5px solid #139d8e;
 }

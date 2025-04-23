@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "./app/store";
 import { moveTask } from "./features/tasks/tasksSlice";
 
+
 export const App = () => {
   const { tasks } = useSelector((state: RootState) => state.tasks);
 

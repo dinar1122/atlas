@@ -5,13 +5,24 @@
   display: flex;
   flex-direction: column;
 }
+.status-0 {
+  background: #F5FAF9 !important;
+
+}
+.status-1 {
+  background: #FAFAF5 !important;
+
+}
+.status-2 {
+  background: #F5F7FA !important;
+
+}
 .TaskSection-header {
   width: 449px;
   height: 24px;
   gap: 12px;
 }
 .TaskSection-main {
-  height: 764px;
   padding: 12px;
   gap: 4px;
   border-radius: 20px;
@@ -24,4 +35,9 @@
   height: 676px;
   gap: 12px;
   overflow-y:scroll;
+
+}
+
+.TaskSection-main-container::-webkit-scrollbar {
+  display: none;
 }

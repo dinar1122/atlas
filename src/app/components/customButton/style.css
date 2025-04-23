@@ -4,10 +4,40 @@
   gap: 9px;
   border-radius: 12px;
   border-width: 1px;
-  padding-top: 12px;
-  padding-right: 24px;
-  padding-bottom: 12px;
-  padding-left: 24px;
+  padding: 12px 24px;
   cursor: pointer;
-  border: 1px solid #6f690b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  vertical-align: middle;
+  transition: all 0.2s ease;
+  background: none;
+}
+
+.CustomButton.ghost {
+  background: transparent !important;
+  border: none !important;
+  padding: 0;
+  width: auto;
+  height: auto;
+}
+
+.button-status-0 {
+  border: 1px solid #0b6f62 !important;
+  color: #0B6F62;
+}
+
+.button-status-1 {
+  border: 1px solid #6F690B !important;
+  color: #6F690B;
+}
+
+.button-status-2 {
+  border: 1px solid #0B2E6F !important;
+  color: #0B2E6F;
 }

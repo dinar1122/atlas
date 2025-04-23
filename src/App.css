@@ -2,4 +2,10 @@
   display: flex;
   flex-direction: row;
   gap: 16px;
+  width: 1440px;
+  height: 900px;
+  top: 814px;
+  left: 1230px;
+  padding: 24px;
+  gap: 24px;
 }
