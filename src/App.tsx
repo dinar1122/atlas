@@ -13,7 +13,6 @@ export const App = () => {
   
   const handleDragEnd = (event: DragEndEvent) => {
     const { active, over } = event;
-    console.log(event)
     if (over ) {
       dispatch(moveTask({
         taskId: active.id as number,
