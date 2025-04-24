@@ -7,7 +7,7 @@
 .TaskItem {
   display: flex;
   flex-direction: column;
-  height: 124px;
+ 
   padding: 16px;
   gap: 16px;
   border-radius: 16px;
