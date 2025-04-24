@@ -22,7 +22,7 @@ const TaskItem = ({
 }: TaskItemProps) => {
   const { attributes, listeners, setNodeRef, transform, isDragging } =
     useDraggable({
-      id: task.id || Date.now(),
+      id: task.id ?? '',
       data: { statusId: task.statusId },
     })
 

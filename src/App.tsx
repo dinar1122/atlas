@@ -13,8 +13,8 @@ export const App = () => {
   
   const handleDragEnd = (event: DragEndEvent) => {
     const { active, over } = event;
-    
-    if (over && active.id !== over.id) {
+    console.log(event)
+    if (over ) {
       dispatch(moveTask({
         taskId: active.id as number,
         sourceStatusId: active.data.current?.statusId,
@@ -26,6 +26,8 @@ export const App = () => {
   const pendingTasks = tasks.filter(task => task.statusId === 0); // В ожидании
   const inProgressTasks = tasks.filter(task => task.statusId === 1); // В работе
   const completedTasks = tasks.filter(task => task.statusId === 2); // закончены
+
+  console.log(inProgressTasks)
 
   return (
     <DndContext onDragEnd={handleDragEnd}>
