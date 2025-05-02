@@ -1,7 +1,7 @@
 
 ## ToDo-приложение на react-typescript-redux-dnd
 
-![preview](image.png)
+![preview](src/app/assets/previewToDo.png)
 
 ## Scripts
 
