@@ -2,9 +2,9 @@ import "./style.css"
 import CustomButton from "../customButton"
 import TaskItem from "../TaskItem"
 import { useCallback, useState } from "react"
-import { TaskForm } from "../TaskForm"
 import { Task } from "../../assets/types"
 import {
+  createEmptyTask,
   deleteTask,
   selectAssignees,
   selectStatuses,
@@ -21,12 +21,16 @@ interface TaskSectionProps {
 
 export const TaskSection = ({ title, tasks, statusId }: TaskSectionProps) => {
   const dispatch = useDispatch()
-  const [form, setForm] = useState(false)
-  
 
   const onDelete = useCallback(
     (id: number) => {
       dispatch(deleteTask(id))
+    },
+    [dispatch],
+  )
+  const onCreateEmpty = useCallback(
+    (statusId: number) => {
+      dispatch(createEmptyTask(statusId))
     },
     [dispatch],
   )
@@ -38,6 +42,8 @@ export const TaskSection = ({ title, tasks, statusId }: TaskSectionProps) => {
 
   const names = useSelector(selectAssignees)
   const statuses = useSelector(selectStatuses)
+
+  
 
   return (
     <div ref={setNodeRef} className={`TaskSection-container`}>
@@ -57,11 +63,12 @@ export const TaskSection = ({ title, tasks, statusId }: TaskSectionProps) => {
       </div>
       <div className={`TaskSection-main status-${statusId}`}>
         <div className="TaskSection-main-container">
-          {tasks.map((task: Task) => {
+          {tasks.map((task: Task, index: number) => {
             const name = names?.[task.assigneeId]
             const status = statuses?.[task.statusId]
             return (
               <TaskItem
+                index={index}
                 onDelete={onDelete}
                 key={task.id}
                 task={task}
@@ -71,10 +78,10 @@ export const TaskSection = ({ title, tasks, statusId }: TaskSectionProps) => {
             )
           })}
         </div>
-        {form && <TaskForm setForm={() => setForm(prev => !prev)} statusId={statusId} />}
+        
         <CustomButton
           className={`button-status-${statusId}`}
-          onClick={() => setForm(prev => !prev)}
+          onClick={() => onCreateEmpty(statusId)}
         >
           Новая задача
         </CustomButton>

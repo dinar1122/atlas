@@ -1,20 +1,22 @@
 .task-item-wrapper {
   position: relative;
   display: inline-block;
-  width: 100%;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid #bbddd6;
+  border-radius: 16px;
+  padding: 16px;
+  gap: 16px;
+  display: flex;
+  flex-direction: column;
 }
 
 .TaskItem {
   display: flex;
   flex-direction: column;
- 
-  padding: 16px;
+
   gap: 16px;
-  border-radius: 16px;
-  border-width: 1px;
-  background-color: rgb(255, 255, 255);
-  border: 1px solid #bbddd6;
-  font-family: 'Inter';
+
+  font-family: "Inter";
 }
 
 .delete-button-wrapper {
@@ -24,7 +26,9 @@
   z-index: 10;
   pointer-events: auto;
 }
-
+.TaskSection-main-container.dragging {
+  overflow-y: visible;
+}
 .TaskItem-header {
   display: flex;
   gap: 8px;
@@ -72,10 +76,7 @@
   gap: 10px;
   border-radius: 100%;
   border-width: 0.5px;
-  padding-top: 2px;
-  padding-right: 4px;
-  padding-bottom: 4px;
-  padding-left: 4px;
+  padding: 3px;
   background: #e9fbf9;
   align-items: center;
   justify-content: center;
